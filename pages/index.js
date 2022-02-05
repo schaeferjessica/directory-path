@@ -1,7 +1,8 @@
 const Homepage = () => {
   return (
     <div>
-      <h1 className="text-lg text-fuchsia-400">Hello World</h1>
+      <p>Tree JS</p>
+      <p>Path</p>
     </div>
   );
 }
