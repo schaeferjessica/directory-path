@@ -2,21 +2,21 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="max-w-5lx mx-auto pl-9 pr-9">
-      <nav className="flex justify-between mt-9">
+    <div className="max-w-5lx mx-auto pl-2 sm:pl-9 pr-2 sm:pr-9">
+      <nav className="sm:flex sm:justify-between sm:items-center mt-4 sm:mt-9">
         <header>
           <h1>Directory Path</h1>
         </header>
-        <ul className="flex">
-          <li className="ml-4"><button className="border-button">Dark Mode</button></li>
-          <li className="ml-4"><a className="border-button block" href="https://github.com/schaeferjessica/directory-path" target="_blank" rel="noreferrer">Github</a></li>
+        <ul className="flex mt-2 sm:mt-0">
+          <li className="mr-3 sm:ml-4"><button className="linked">Dark Mode</button></li>
+          <li className="mr-3 sm:ml-4"><a className="linked block" href="https://github.com/schaeferjessica/directory-path" target="_blank" rel="noreferrer">Github</a></li>
         </ul>
       </nav>
       
       <Component {...pageProps} />
 
       <footer className="mt-20 text-right">
-        <small>© 2022 UNIX PATH - build with ♥ and <a className="border-button" href="https://nextjs.org/">Next.js</a></small>
+        <small>© 2022 UNIX PATH - build with ♥ and <a className="linked" href="https://nextjs.org/">Next.js</a></small>
       </footer>
     </div>
   )

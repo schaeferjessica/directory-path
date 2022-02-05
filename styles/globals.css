@@ -4,10 +4,10 @@
 
 @layer base {
   body {
-    @apply text-[#223956];
+    @apply text-midnight text-sm sm:text-base;
   }
   h1 {
-    @apply text-2xl;
+    @apply text-2xl sm:text-3xl;
   }
   h2 {
     @apply text-xl;
@@ -18,7 +18,7 @@
 }
 
 @layer components {
-  .border-button {
-    @apply border-[#223956] border-b;
+  .linked {
+    @apply border-midnight border-b uppercase;
   }
 }
