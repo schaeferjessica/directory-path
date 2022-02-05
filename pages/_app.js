@@ -8,12 +8,16 @@ function MyApp({ Component, pageProps }) {
           <h1>Directory Path</h1>
         </header>
         <ul className="flex">
-          <li className="ml-4"><button className="border-midnight border-b-2">Dark Mode</button></li>
-          <li className="ml-4"><a className="border-midnight border-b-2 block" href="https://github.com/schaeferjessica/directory-path" target="_blank" rel="noreferrer">Github</a></li>
+          <li className="ml-4"><button className="border-button">Dark Mode</button></li>
+          <li className="ml-4"><a className="border-button block" href="https://github.com/schaeferjessica/directory-path" target="_blank" rel="noreferrer">Github</a></li>
         </ul>
       </nav>
       
       <Component {...pageProps} />
+
+      <footer className="mt-20 text-right">
+        <small>© 2022 UNIX PATH - build with ♥ and <a className="border-button" href="https://nextjs.org/">Next.js</a></small>
+      </footer>
     </div>
   )
 }

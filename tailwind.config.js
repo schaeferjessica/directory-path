@@ -4,16 +4,17 @@ module.exports = {
     "./styles/**/*.{js,ts,jsx,tsx}",  
   ],  
   theme: {        
-    colors: {
-      'midnight': '#f7fafc',
-      'lavender': '#D3DAF2',
-    },
+    extend: {
+      colors: {
+        'midnight': '#f7fafc',
+        'lavender': '#D3DAF2',
+      },
+    },  
     fontFamily: {
       sans: ['ui-sans-serif', 'sans-serif'],
       serif: ['ui-serif', 'serif'],
       mono: ['ui-monospace', 'monospace'],
-    }, 
-    extend: {},  
+    },
   },  
   plugins: [],
 }

@@ -16,3 +16,9 @@
     @apply text-lg;
   }
 }
+
+@layer components {
+  .border-button {
+    @apply border-[#223956] border-b;
+  }
+}
