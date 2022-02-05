@@ -4,6 +4,8 @@ run local server:
 yarn dev
 ```
 
-tailwindcss setup for nextjs:
-
+tailwindcss - setup for nextjs:
 https://tailwindcss.com/docs/guides/nextjs
+
+vercel - deployment: 
+https://directory-path.vercel.app/
