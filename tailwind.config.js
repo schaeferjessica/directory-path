@@ -12,7 +12,8 @@ module.exports = {
       keyframes: {
         gradient: {
           '0%': { transform: 'translate3d(0%, 0%, 0)' },
-          '100%': { transform: 'translate3d(-75%, 0%, 0)' },    
+          '50%': { transform: 'translate3d(-75%, 0%, 0)' },
+          '100%': { transform: 'translate3d(0%, 0%, 0)' }, 
           }      
         }
     },  

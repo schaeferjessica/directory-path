@@ -25,6 +25,6 @@
     @apply bg-gradient-to-r from-midnight to-midnight w-[400%] absolute content-[''] bottom-[0.08rem] left-0 h-[0.09rem];
   }
   .underline-text:hover::after {
-    @apply from-[#432371] to-[#faae7b] animate-[gradient_6s_linear_infinite];
+    @apply from-[#3A1C71] to-[#FFAF7B] animate-[gradient_4s_linear_infinite];
   }
 }
