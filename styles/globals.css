@@ -22,9 +22,9 @@
     @apply relative inline-block overflow-hidden align-bottom;
   }
   .underline-text::after {
-    @apply bg-gradient-to-r from-midnight to-midnight w-full absolute content-[''] bottom-[0.08rem] left-0 h-[0.09rem];
+    @apply bg-gradient-to-r from-midnight to-midnight w-[400%] absolute content-[''] bottom-[0.08rem] left-0 h-[0.09rem];
   }
   .underline-text:hover::after {
-    @apply bg-gradient-to-r from-[#432371] via-[#faae7b] to-[#ef745c] w-full absolute content-[''] bottom-[0.08rem] left-0 h-[0.09rem];
+    @apply from-[#432371] to-[#faae7b] animate-[gradient_6s_linear_infinite];
   }
 }
