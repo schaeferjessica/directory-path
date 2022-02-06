@@ -1,4 +1,6 @@
 import '../styles/globals.css'
+import Link from 'next/link'
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -8,11 +10,11 @@ function MyApp({ Component, pageProps }) {
           <h1>Directory Path</h1>
         </header>
         <ul className="flex">
+          <Link href="/about"><li><a>About</a></li></Link>
           <li><button>Dark Mode</button></li>
           <li><a href="https://github.com/schaeferjessica/directory-path">Github</a></li>
         </ul>
-      </nav>
-      
+      </nav>    
       <Component {...pageProps} />
     </div>
   )
