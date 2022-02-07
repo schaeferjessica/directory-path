@@ -1,4 +1,6 @@
 import { UncontrolledTreeEnvironment, Tree, StaticTreeDataProvider } from 'react-complex-tree';
+import 'react-complex-tree/lib/style.css';
+
 
 
 const Homepage = () => {
@@ -26,19 +28,20 @@ const Homepage = () => {
         data: 'Child item 3',
       },
     };
+    
   return (
     <div className="mt-20">
       <div>
         <small className="uppercase">Directory:</small>
-    </div>
-    <div>
+   
     <UncontrolledTreeEnvironment
-  dataProvider={new StaticTreeDataProvider(items, (item, data) => ({ ...item, data }))}
-  getItemTitle={item => item.data}
-  viewState={{}} >
+      dataProvider={new StaticTreeDataProvider(items, (item, data) => ({ ...item, data }))}
+      getItemTitle={item => item.data}
+      viewState={{}}
+    >
   <Tree treeId="tree-1" rootItem="root" treeLabel="Tree Example" />
 </UncontrolledTreeEnvironment>
-    </div>
+</div>
       <div>
         <small className="uppercase">Relative Path:</small>
       </div>
