@@ -1,15 +1,20 @@
 import Link from 'next/link'
 
+
 export default function About() {
     return (
       <>
-      <h1>In this page we are going to explain a liitle about the project and how to find the path on our webapp.
+      <div className='font-mono'>
+      <h1>In this page we are going to explain a litle about the project and how to find the path on our webapp.
       </h1>
-      <h2>
+      </div>
+     <div className='font-mono'>
+       <h2>
           <Link href="/">
-            <a>Back to home</a>
+            <a><button class='rounded-full px-2 border-2'>Back to home</button></a>
           </Link>
-     </h2>
+     </h2></div>
+      
       </>
 
   )
