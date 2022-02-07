@@ -8,24 +8,56 @@ const Homepage = () => {
       root: {
         index: 'root',
         hasChildren: true,
-        children: ['child1', 'child2'],
+        children: ['child1', 'child2', 'child6', 'child7', 'child9'],
         data: 'Root item',
       },
       child1: {
         index: 'child1',
         children: [],
-        data: 'Child item 1',
+        data: 'Your Project',
       },
       child2: {
         index: 'child2',
         hasChildren: true,
-        children: ['child3'],
-        data: 'Child item 2',
+        children: ['child3', 'child4'],
+        data: 'Pages',
       },
       child3: {
         index: 'child3',
+        hasChildren: true,
+        children: ['child5'],
+        data: 'api',
+      },
+      child4: {
+        index: 'child4',
         children: [],
-        data: 'Child item 3',
+        data: 'Index.js',
+      },
+      child5: {
+        index: 'child5',
+        children: [],
+        data: 'hello.js',
+      },
+      child6: {
+        index: 'child6',
+        children: [],
+        data: 'Public',
+      },
+      child7: {
+        index: 'child7',
+        hasChildren: true,
+        children: ['child8'],
+        data: 'Styles',
+      },
+      child8: {
+        index: 'child8',
+        children: [],
+        data: 'globals.css',
+      },
+      child9: {
+        index: 'child9',
+        children: [],
+        data: 'package.json',
       },
     };
     
