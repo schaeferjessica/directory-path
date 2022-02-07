@@ -1,4 +1,5 @@
 import BasicTree from "../components/tree";
+import Path from "../components/path";
 
 const Homepage = () => {
   return (
@@ -9,6 +10,7 @@ const Homepage = () => {
       </div>
       <div>
         <small className="uppercase">Relative Path:</small>
+        <Path />
       </div>
     </div>
   );

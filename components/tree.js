@@ -1,4 +1,3 @@
-
 import { testData } from '../pages/api/data';
 import dynamic from 'next/dynamic';
 
