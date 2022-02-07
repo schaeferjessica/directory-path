@@ -22,11 +22,11 @@ yarn dev
 npm run dev
 ```
 
-tailwindcss - setup for nextjs:
+*tailwindcss - setup for nextjs:*
 https://tailwindcss.com/docs/guides/nextjs
 
-## Usage
+## Current running version
 
-vercel - deployment: 
+*vercel - deployment:*
 https://directory-path.vercel.app/
 
