@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import Link from 'next/link'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }) {
             <h1>Directory Path</h1>
           </header>
           <ul className="flex mt-2 sm:mt-0">
+            <li><Link href="/about" className="underline-text uppercase">About</Link></li>
             <li className="mr-3 sm:ml-4"><button className="underline-text uppercase">Dark Mode</button></li>
             <li className="mr-3 sm:ml-4"><a className="underline-text uppercase block" href="https://github.com/schaeferjessica/directory-path" target="_blank" rel="noreferrer">Github</a></li>
           </ul>
