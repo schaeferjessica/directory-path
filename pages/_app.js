@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
       <div className="max-w-5lx mx-auto pl-2 sm:pl-9 pr-2 sm:pr-9">
         <nav className="sm:flex sm:justify-between sm:items-center mt-4 sm:mt-9">
           <header>
-            <h1>Directory Path</h1>
+            <Link href="/"><h1>Directory Path</h1></Link>
           </header>
           <ul className="flex mt-2 sm:mt-0">
             <li className="mr-3 sm:ml-4 underline-text uppercase"><Link href="/tree">Tree</Link></li>
