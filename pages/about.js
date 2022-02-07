@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function About() {
+const About = () =>  {
     return (
       <>
         <div className='font-mono'>
@@ -12,3 +12,5 @@ export default function About() {
       </>
     )
   } 
+
+  export default About;
