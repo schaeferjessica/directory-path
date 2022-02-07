@@ -1,7 +1,7 @@
 import BasicTree from "../components/tree";
 import Path from "../components/path";
 
-const Homepage = () => {
+const rootElement = () => {
   return (
     <div className="mt-20 grid grid-cols-2 gap-4">
       <div>
@@ -16,4 +16,4 @@ const Homepage = () => {
   );
 }
 
-export default Homepage;
+export default rootElement;
