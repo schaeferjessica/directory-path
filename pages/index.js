@@ -30,7 +30,7 @@ const Homepage = () => {
     };
     
   return (
-    <div className="mt-20">
+    <div className="mt-20 grid grid-cols-2 gap-4">
       <div>
         <small className="uppercase">Directory:</small>
    
