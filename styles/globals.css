@@ -28,3 +28,14 @@
     @apply from-[#3A1C71] to-[#FFAF7B] animate-[gradient_4s_linear_infinite];
   }
 }
+
+.TreeNode {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.iconContainer {
+  display: flex;
+  margin-left: 5px;
+}
