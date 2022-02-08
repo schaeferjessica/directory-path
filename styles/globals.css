@@ -28,15 +28,22 @@
     @apply from-[#3A1C71] to-[#FFAF7B] animate-[gradient_4s_linear_infinite];
   }
   .box {
-    @apply border border-midnight p-6;
+    @apply border border-midnight p-4 shadow-[5px_5px_0px_0px_rgba(34,57,86,1)];
   }
 }
 
+/* react-folder-tree */
 .TreeNode {
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+}
+.TreeNode:not(:last-child) {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.TreeNode:first-child {
+  text-transform: uppercase;
 }
 .iconContainer {
   display: flex;
