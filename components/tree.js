@@ -7,14 +7,29 @@ const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
 
 const BasicTree = () => {
   const onTreeStateChange = (state, event) => {
-    if (state.checked == '1') {  
-      //  state.children.forEach((child, i) => {
-      //  console.log(state.children[i])
-      //  })
-      console.log(state.children)
-    }
-      console.log(state, event);
-      console.log(testData); 
+  
+    // state = root
+    // get all descendats from root that are checked
+
+    // const getChecked = (branch) => {
+      
+    //   let checked = []
+
+    //   if(branch.hasOwnProperty('isOpen')) {
+    //     // for each children
+    //     // getChecked(child) and concatenate to array
+    //   } else {
+    //     if(state.checked == 1) {
+    //       return [state.name]
+    //     }
+    //     else return []
+    //   }      
+    //     getChecked(state)
+    //   }
+    // }
+    console.log(state, event);
+    console.log(testData)
+
 }
   return (
     <DynamicFileTreeImport data={testData} onChange={onTreeStateChange} />
