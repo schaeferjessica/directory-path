@@ -7,5 +7,5 @@ export default function Footer() {
         <small>© 2022 UNIX PATH - build with ♥ and <a className="underline-text uppercase" href="https://nextjs.org/">Next.js</a></small>
       </Container>
     </footer>
-    )
-  }
+  )
+}
