@@ -1,0 +1,3 @@
+export default function Container({ children }) {
+  return <div className="max-w-5lx mx-auto pl-2 sm:pl-9 pr-2 sm:pr-9">{children}</div>
+}

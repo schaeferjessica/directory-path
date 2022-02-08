@@ -18,9 +18,9 @@ module.exports = {
         }
     },  
     fontFamily: {
-      sans: ['ui-sans-serif', 'sans-serif'],
+      sans: ['IBM Plex Sans', 'ui-sans-serif', 'sans-serif'],
       serif: ['ui-serif', 'serif'],
-      mono: ['ui-monospace', 'monospace'],
+      mono: ['IBM Plex Mono', 'ui-monospace', 'monospace'],
     },
   },  
   plugins: [],
