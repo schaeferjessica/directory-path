@@ -6,9 +6,12 @@ const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
 });
 
 const BasicTree = () => {
-  const onTreeStateChange = (state, event) => console.log(state, event);
-  console.log(testData);
-
+  const onTreeStateChange = (state, event) => {
+    if (event.type == 'checkNode') {
+      console.log(state.children)
+      console.log(state, event);
+      console.log(testData); }
+  }
   return (
     <DynamicFileTreeImport data={testData} onChange={onTreeStateChange} />
   );
