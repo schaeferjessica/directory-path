@@ -3,8 +3,8 @@ const Path = () => {
       <div>
         <span className="block">../styles/globals.css</span>
         <br />
-        <span className="block">start: _app.js</span>
-        <span className="block">end: globals.css</span>
+        <small className="block">start: _app.js</small>
+        <small className="block">end: globals.css</small>
       </div>
   );
 };

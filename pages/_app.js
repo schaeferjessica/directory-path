@@ -29,7 +29,7 @@ function App({ Component, pageProps }) {
         
         <Component {...pageProps} />
 
-        <footer className="mt-20 mb-4 text-right">
+        <footer className="mt-14 mb-4 text-right">
           <small>© 2022 UNIX PATH - build with ♥ and <a className="underline-text uppercase" href="https://nextjs.org/">Next.js</a></small>
         </footer>
       </div>
