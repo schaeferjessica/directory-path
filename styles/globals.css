@@ -27,6 +27,9 @@
   .underline-text:hover::after {
     @apply from-[#3A1C71] to-[#FFAF7B] animate-[gradient_4s_linear_infinite];
   }
+  .box {
+    @apply border border-midnight p-6;
+  }
 }
 
 .TreeNode {
