@@ -6,11 +6,11 @@ const rootElement = () => {
     <div className="mt-20 grid grid-cols-2 gap-4">
       <div>
         <small className="uppercase">Directory:</small>
-        <BasicTree />
+        <div className="mt-4 box"><BasicTree /></div>
       </div>
       <div>
         <small className="uppercase">Relative Path:</small>
-        <Path />
+        <div className="mt-4 box"><Path /></div>
       </div>
     </div>
   );
