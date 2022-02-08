@@ -1,46 +1,32 @@
 const testData = {
-  name: 'All Cryptos',
+  name: 'Your Project',
   children: [
-    { name: 'Bitcoin' },
-    { name: 'Etherium' },
-    { name: 'Polkadot' },
     {
-      name: 'POW',
+      name: 'Pages',
       children: [
-        { name: 'Bitcoin' },
-        { name: 'Litecoin' },
-        { name: 'Bitcoin Cash' },
+        { name: 'API', 
+        children: [
+          {
+            name: 'hello.js'
+          }
+        ] },
+        { name: 'app.js' },
+        { name: 'index.js' },
       ],
     },
     {
-      name: 'Public Chains',
-      children: [
-        { name: 'Ripple' },
-        { name: 'Chainlink' },
-        {
-          name: 'POW',
-          children: [
-            { name: 'Bitcoin' },
-            { name: 'Litecoin' },
-            { name: 'Bitcoin Cash' },
-          ],
-        },
-        {
-          name: 'POS',
-          children: [
-            { name: 'Etherium' },
-            { name: 'EOS' },
-            {
-              name: 'Crosschain',
-              children: [
-                { name: 'Polkadot' },
-                { name: 'Cosmos' },
-              ],
-            },
-          ],
-        },
-      ],
+      name: 'Public',
     },
+    {
+      name: 'Styles',
+      children: [
+        {
+          name:'globals.css'
+        }
+      ]
+    },
+    { name: 'package-lock.json' },
+    { name: 'package.json' },
   ],
 };
 
