@@ -1,8 +1,10 @@
+import Layout from '../components/layout'
+import Head from 'next/head'
 import Container from '../components/container'
 import BasicTree from '../components/tree'
 import Path from '../components/path'
-import Layout from '../components/layout'
-import Head from 'next/head'
+
+
 
 export default function Index() {
   return (
