@@ -32,6 +32,14 @@
   }
 }
 
+.grid-rows-layout {
+  grid-template-rows: auto 1fr auto;
+}
+
+[data-reactroot] { 
+  height: 100% 
+}
+
 /* react-folder-tree */
 .TreeNode {
   display: flex;
