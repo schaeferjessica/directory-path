@@ -5,8 +5,6 @@ import BasicTree from '../components/tree'
 import Path from '../components/path'
 import {useState} from "react"
 
-
-
 export default function Index() {
 
 
