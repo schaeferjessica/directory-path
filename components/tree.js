@@ -9,21 +9,44 @@ const BasicTree = (props) => {
   const onTreeStateChange = (state, event) => {
     
 
-    const getChecked = (branch) => {
+    const getChecked = (branch, path) => {
       let checkedElements = []
+
+      let branchPath = path + '/' + branch.name
+
       if(branch.hasOwnProperty('isOpen')) {
         branch.children.forEach((child,i) => {
-          checkedElements = checkedElements.concat(getChecked(child))
+          checkedElements = checkedElements.concat(getChecked(child, branchPath))
         })
       } else if(branch.checked == 1) {
-          checkedElements.push(branch.name)     
+          checkedElements.push(branchPath)
       }
       return checkedElements 
     }
 
-    let from = getChecked(state)[0]
-    let to = getChecked(state)[1]
-    let path = `../${from}/${to}`
+    console.log(getChecked(state, ''))
+    console.log(state, event)
+
+    let checkedEl = getChecked(state, '')
+
+    let from = checkedEl[0]
+    let to = checkedEl[1]
+    let path =(`${from}, ${to}`)
+    
+    // const computePath = (from, to) => {
+    //   if (from[0] == to[0]){
+    //     console.log('.')
+    //   } 
+    //   if (from[0] == to[0] && from[1] == to[1]){
+    //     console.log('/') 
+    //   } 
+    //   if (from[2] == to [2]){
+    //     console.log('./')
+    //   }
+
+    // }
+
+    
     
     //Defining the values of 'from, to and path' according the a function that gets all the checked elements of an object
     //Adding those values to the function setPathObj 
