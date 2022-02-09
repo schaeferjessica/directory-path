@@ -4,8 +4,6 @@ import Container from '../components/container'
 import BasicTree from '../components/tree'
 import Path from '../components/path'
 
-
-
 export default function Index() {
   return (
     <Layout>
