@@ -21,10 +21,8 @@ const BasicTree = (props) => {
       return checkedElements 
     }
 
-    let checkEls = getChecked(state)
-
-    let from = checkEls[0]
-    let to = checkEls[1]
+    let from = getChecked(state)[0]
+    let to = getChecked(state)[1]
     let path = `../${from}/${to}`
     
     //Defining the values of 'from, to and path' according the a function that gets all the checked elements of an object
