@@ -5,9 +5,10 @@ const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
   ssr: false,
 });
 
-const BasicTree = () => {
+const BasicTree = (props) => {
   const onTreeStateChange = (state, event) => {
-  
+    
+
     const getChecked = (branch) => {
       let checkedElements = []
       if(branch.hasOwnProperty('isOpen')) {
@@ -20,7 +21,22 @@ const BasicTree = () => {
       return checkedElements 
     }
 
-    console.log(getChecked(state))
+    let checkEls = getChecked(state)
+
+    let from = checkEls[0]
+    let to = checkEls[1]
+    let path = `../${from}/${to}`
+    
+    //Defining the values of 'from, to and path' according the a function that gets all the checked elements of an object
+    //Adding those values to the function setPathObj 
+
+    props.setPathObj({
+      from: from,
+      to: to,
+      path: path
+    })
+
+   
 
   }
   return (
