@@ -13,7 +13,10 @@ module.exports = {
           '100%': { transform: 'translate3d(0%, 0%, 0)' }, 
           }      
         }
-    },  
+    },
+    gridTemplateRows: {
+      layout: 'auto 1fr auto',
+    },
     fontFamily: {
       sans: ['IBM Plex Sans', 'ui-sans-serif', 'sans-serif'],
       serif: ['ui-serif', 'serif'],
