@@ -6,11 +6,11 @@ export default function Layout({  children }) {
   return (
     <>
       <Meta />
-      <Navigation />
-      <div className="min-h-screen">
+      <div className='grid grid-rows-layout min-h-full'>
+        <Navigation />
         <main>{children}</main>
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }

@@ -19,8 +19,8 @@ export default function About() {
           <br />See your path on RELATIVE PATH, press copy to use it and learn!
           </p>
       
-          <div className="uppercase underline-text mt-4">
-            <Link href="/">Back to home</Link>
+          <div className="uppercase underline-text mt-8">
+            <Link href="/">generate a path</Link>
           </div>
         </div>
       </Container>
