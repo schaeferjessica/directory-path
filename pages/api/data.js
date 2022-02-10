@@ -1,4 +1,4 @@
-const testData = {
+const defaultData = {
   name: 'Your Project',
   children: [
     {
@@ -30,7 +30,7 @@ const testData = {
   ],
 };
 
-const testDataWithId = {
+const defaultDataWithId = {
   name: 'All Cryptos',
   _id: 0,
   children: [
@@ -82,7 +82,7 @@ const testDataWithId = {
   ],
 };
 
-const initializedTestData = {
+const initializedDefaultData = {
   name: 'All Cryptos',
   _id: 0,
   checked: 0,
@@ -140,8 +140,4 @@ const initializedTestData = {
   ],
 };
 
-export {
-  testData,
-  testDataWithId,
-  initializedTestData,
-};
+export { defaultData, defaultDataWithId, initializedDefaultData };

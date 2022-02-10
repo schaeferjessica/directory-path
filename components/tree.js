@@ -1,5 +1,6 @@
-import { testData } from '../pages/api/data';
+import { defaultData } from '../pages/api/data';
 import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
 
 const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
   ssr: false,
@@ -7,7 +8,23 @@ const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
 
 const BasicTree = (props) => {
   const onTreeStateChange = (state, event) => {
-    
+
+    document.querySelectorAll('.FolderOpenIcon, .FolderIcon').forEach(item => {
+      const checkbox = item.parentElement.parentElement.querySelector('.checkboxDOM');
+      checkbox.disabled = true;
+      checkbox.setAttribute('hidden', 'true')
+    });
+
+    document.querySelectorAll('.TreeNode').forEach(item => {
+      const checkbox = item.querySelector('.checkboxDOM')
+      checkbox.addEventListener('change', () => {
+        if(checkbox.checked) {
+          item.classList.add('selected');
+        } else {
+          item.classList.remove('selected');
+        }
+      })
+    })
 
     const getChecked = (branch, path) => {
       let checkedElements = []
@@ -15,6 +32,7 @@ const BasicTree = (props) => {
       let branchPath = path + '/' + branch.name
 
       if(branch.hasOwnProperty('isOpen')) {
+        /* console.log(branch) */
         branch.children.forEach((child,i) => {
           checkedElements = checkedElements.concat(getChecked(child, branchPath))
         })
@@ -24,8 +42,8 @@ const BasicTree = (props) => {
       return checkedElements 
     }
 
-    console.log(getChecked(state, ''))
-    console.log(state, event)
+    /* console.log(getChecked(state, '')) */
+    /* console.log(state, event) */
 
     let checkedEl = getChecked(state, '')
 
@@ -84,8 +102,6 @@ const BasicTree = (props) => {
       return path += remaining.join('/') 
       
       //console.log(path)
-      
-
     }    
     
     //Defining the values of 'from, to and path' according the a function that gets all the checked elements of an object
@@ -97,11 +113,9 @@ const BasicTree = (props) => {
       path: computePath(from, to)
     })
 
-   
-
   }
   return (
-    <DynamicFileTreeImport data={testData} onChange={onTreeStateChange} />
+    <DynamicFileTreeImport data={defaultData} onChange={onTreeStateChange}/>
   );
 };
 
