@@ -45,16 +45,47 @@ const BasicTree = (props) => {
     const computePath = (from, to) => {
 
       let fromParts = from.split('/')
-      fromParts.pop()
       fromParts.shift()
       //console.log(fromParts)
 
       let toParts = to.split('/')
-      toParts.pop()
       toParts.shift()
       console.log(toParts)
 
-    
+      let extract = []
+      let remaining = []
+      
+      let nReturn = 0
+      
+      for (let i = 0; i < fromParts.length; i++){
+        let e = fromParts[i]
+        let x = toParts[i]
+        if(e == x) {
+            extract.push(e)
+        } else {
+          nReturn = fromParts.length - i - 1
+          remaining = toParts.slice(i)
+          break
+        }
+      }
+      
+      //console.log(nReturn)
+      
+      let path = ''
+      
+      if (nReturn > 0) {
+        for (let i=0; i< nReturn; i++){
+          path += '../'
+        } 
+      } else {
+        path += './'
+      }
+      
+      return path += remaining.join('/') 
+      
+      //console.log(path)
+      
+
     }    
     
     //Defining the values of 'from, to and path' according the a function that gets all the checked elements of an object
