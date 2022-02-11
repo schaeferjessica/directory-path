@@ -15,10 +15,6 @@ export default function Index() {
   return (
     <Layout>
       <Head>
-      <meta charset="utf-8"/>
-      <meta name="title" content="Directory Path Generator"/ >
-      <meta name="description" content="A Directory Path Generator for Begginer Coders. Get the path required to access a certain file or module in a fast and clever way."/ >
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
         <title>Directory Path</title>
 
       </Head>
