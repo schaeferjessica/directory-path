@@ -1,5 +1,5 @@
 const defaultData = {
-  name: 'Your Project',
+  name: 'Your-Project',
   children: [
     {
       name: 'Pages',

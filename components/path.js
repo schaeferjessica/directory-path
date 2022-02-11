@@ -7,8 +7,8 @@ const Path = (props) => {
     <div>
       <span className="block">{props.pathObj.path}</span>
       <br />
-      <small className="block">start: {props.pathObj.from} </small>
-      <small className="block">end: {props.pathObj.to}</small>
+      <small className="block">from: {props.pathObj.from} </small>
+      <small className="block">to: {props.pathObj.to}</small>
     </div>
   );
 };
