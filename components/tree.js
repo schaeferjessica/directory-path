@@ -6,8 +6,33 @@ const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
 });
 
 const BasicTree = (props) => {
+
+  const setupTree = () => {
+    document.querySelectorAll('.FolderOpenIcon, .FolderIcon').forEach(item => {
+      const checkbox = item.parentElement.parentElement.querySelector('.checkboxDOM');
+      checkbox.disabled = true;
+      checkbox.setAttribute('hidden', 'true')
+    });
+  
+    document.querySelectorAll('.TreeNode').forEach(item => {
+      const checkbox = item.querySelector('.checkboxDOM')
+      checkbox.addEventListener('change', () => {
+        if(checkbox.checked) {
+          item.classList.add('selected');
+  
+        } else {
+          item.classList.remove('selected');
+        }
+      })
+    })
+  }
+  
   const onTreeStateChange = (state, event) => {
     
+    if (state.setupDone == undefined){
+      setupTree()
+      state.setupDone = true
+    }
 
     const getChecked = (branch, path) => {
       let checkedElements = []
@@ -25,10 +50,54 @@ const BasicTree = (props) => {
     }
 
     console.log(getChecked(state, ''))
-    console.log(state, event)
+
+    const uncheckSelected = () => {
+      let s = document.querySelectorAll('.selected')
+      return s
+    }
+    console.log('HELLO', uncheckSelected())
+    
+    //console.log(getChecked(state, ''))
+    /* console.log(state, event) */
 
     let checkedEl = getChecked(state, '')
+    //console.log(checkedEl)
 
+    state.numChecked = checkedEl.length
+
+    state.fromEl = checkedEl[0]
+
+
+    if (checkedEl.length == 0){
+      state.firstEl = undefined
+    } else if(checkedEl.length == 1) {
+      state.firstEl = checkedEl[0]
+      state.secondEl = undefined
+    } else if (checkedEl.length == 2) {
+      if (state.firstEl == checkedEl[0]) {
+        state.secondEl = checkedEl[1]
+      } else {
+        state.secondEl = checkedEl[0]
+      }
+    } else if (checkedEl.length > 2){
+      
+      if (state.firstEl == checkedEl[0] && state.secondEl == checkedEl[1] ){
+        state.firstEl = checkedEl[2]
+      } else if (state.firstEl == checkedEl[1] && state.secondEl == checkedEl[0] ){
+        state.firstEl = checkedEl[2]
+      } else if (state.firstEl == checkedEl[0] && state.secondEl == checkedEl[2] ){
+        state.firstEl = checkedEl[1]
+      } else if (state.firstEl == checkedEl[2] && state.secondEl == checkedEl[0] ){
+        state.firstEl = checkedEl[1]
+      } else if (state.firstEl == checkedEl[1] && state.secondEl == checkedEl[2] ){
+        state.firstEl = checkedEl[0]
+      } else if (state.firstEl == checkedEl[2] && state.secondEl == checkedEl[1] ){
+        state.firstEl = checkedEl[0]
+      }
+      state.secondEl = undefined
+    }
+
+    
     let from = checkedEl[0] 
     if (from == null) {
       from = ''
@@ -42,51 +111,44 @@ const BasicTree = (props) => {
       to = checkedEl[1]
     }
     
-    const computePath = (from, to) => {
+    function computePath(from, to) {
 
-      let fromParts = from.split('/')
-      fromParts.shift()
-      //console.log(fromParts)
+      let fromParts = from.split('/');
+      fromParts.shift();
 
-      let toParts = to.split('/')
-      toParts.shift()
-      console.log(toParts)
+      let toParts = to.split('/');
+      toParts.shift();
+      console.log(toParts);
 
-      let extract = []
-      let remaining = []
-      
-      let nReturn = 0
-      
-      for (let i = 0; i < fromParts.length; i++){
-        let e = fromParts[i]
-        let x = toParts[i]
-        if(e == x) {
-            extract.push(e)
+      let extract = [];
+      let remaining = [];
+
+      let nReturn = 0;
+
+      for (let i = 0; i < fromParts.length; i++) {
+        let e = fromParts[i];
+        let x = toParts[i];
+        if (e == x) {
+          extract.push(e);
         } else {
-          nReturn = fromParts.length - i - 1
-          remaining = toParts.slice(i)
-          break
+          nReturn = fromParts.length - i - 1;
+          remaining = toParts.slice(i);
+          break;
         }
       }
-      
-      //console.log(nReturn)
-      
-      let path = ''
-      
-      if (nReturn > 0) {
-        for (let i=0; i< nReturn; i++){
-          path += '../'
-        } 
-      } else {
-        path += './'
-      }
-      
-      return path += remaining.join('/') 
-      
-      //console.log(path)
-      
 
-    }    
+      let path = '';
+
+      if (nReturn > 0) {
+        for (let i = 0; i < nReturn; i++) {
+          path += '../';
+        }
+      } else {
+        path += './';
+      }
+
+      return path += remaining.join('/');
+    }  
     
     //Defining the values of 'from, to and path' according the a function that gets all the checked elements of an object
     //Adding those values to the function setPathObj 
@@ -100,6 +162,7 @@ const BasicTree = (props) => {
    
 
   }
+
   return (
     <DynamicFileTreeImport data={testData} onChange={onTreeStateChange} />
   );
