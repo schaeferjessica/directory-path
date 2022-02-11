@@ -2,9 +2,9 @@ const defaultData = {
   name: 'Your-Project',
   children: [
     {
-      name: 'Pages',
+      name: 'pages',
       children: [
-        { name: 'API', 
+        { name: 'apt', 
         children: [
           {
             name: 'hello.js'
@@ -15,10 +15,10 @@ const defaultData = {
       ],
     },
     {
-      name: 'Public',
+      name: 'public',
     },
     {
-      name: 'Styles',
+      name: 'styles',
       children: [
         {
           name:'globals.css'
