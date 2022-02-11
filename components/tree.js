@@ -1,4 +1,4 @@
-import { testData } from '../pages/api/data';
+import { defaultData } from '../pages/api/data';
 import dynamic from 'next/dynamic';
 
 const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
@@ -13,22 +13,29 @@ const BasicTree = (props) => {
       checkbox.disabled = true;
       checkbox.setAttribute('hidden', 'true')
     });
-  
-  //   document.querySelectorAll('.TreeNode').forEach(item => {
-  //     const checkbox = item.querySelector('.checkboxDOM')
-  //     checkbox.addEventListener('change', () => {
-  //       if(checkbox.checked) {
-  //         item.classList.add('selected');
-  
-  //       } else {
-  //         item.classList.remove('selected');
-  //       }
-  //     })
-  //   })
-   }
-  
+
+    document.querySelectorAll('.TreeNode').forEach(item => {
+		const checkbox = item.querySelector('.checkboxDOM')
+		const checkboxDiv = item.querySelector('.CheckBox')
+		const checkboxSpan = item.querySelector('.checkbox-span')
+
+		if (!checkboxSpan) {
+			const span = document.createElement('span');
+			span.classList.add('checkbox-span');
+			checkboxDiv.appendChild(span);
+		}
+
+		checkbox.addEventListener('change', () => {
+			if(checkbox.checked) {
+				item.classList.add('selected');
+			} else {
+				item.classList.remove('selected');
+			}
+		})
+	})
+
   const onTreeStateChange = (state, event) => {
-    
+
     if (state.setupDone == undefined){
       setupTree()
       state.setupDone = true
@@ -40,6 +47,7 @@ const BasicTree = (props) => {
       let branchPath = path + '/' + branch.name
 
       if(branch.hasOwnProperty('isOpen')) {
+        /* console.log(branch) */
         branch.children.forEach((child,i) => {
           checkedElements = checkedElements.concat(getChecked(child, branchPath))
         })
@@ -49,10 +57,10 @@ const BasicTree = (props) => {
             el: branch
           })
       }
-      return checkedElements 
+      return checkedElements
     }
 
-    //console.log(getChecked(state, ''))
+    /* console.log(getChecked(state, '')) */
     /* console.log(state, event) */
 
     let checkedEl = getChecked(state, '')
@@ -97,9 +105,9 @@ const BasicTree = (props) => {
     // } else if (state.firstEl.path == checkedEl[0].path && state.secondEl == undefined) {
     //   console.log('you are here')
     //   console.log('now choose where to go')
-    // } 
+    // }
 
-    
+
     let from = state.firstEl
     if (from == null) {
       from = ''
@@ -112,7 +120,7 @@ const BasicTree = (props) => {
     } else {
       to = state.secondEl.path
     }
-    
+
     function computePath(from, to) {
 
       let fromParts = from.split('/');
@@ -150,10 +158,10 @@ const BasicTree = (props) => {
       }
 
       return path += remaining.join('/');
-    }  
-    
+    }
+
     //Defining the values of 'from, to and path' according the a function that gets all the checked elements of an object
-    //Adding those values to the function setPathObj 
+    //Adding those values to the function setPathObj
 
     props.setPathObj({
       from: from,
@@ -161,12 +169,10 @@ const BasicTree = (props) => {
       path: computePath(from, to)
     })
 
-   
-
   }
 
   return (
-    <DynamicFileTreeImport data={testData} onChange={onTreeStateChange} />
+    <DynamicFileTreeImport data={defaultData} onChange={onTreeStateChange}/>
   );
 };
 

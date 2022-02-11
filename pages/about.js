@@ -10,7 +10,7 @@ export default function About() {
         <title>Directory Path - About</title>
       </Head>
       <Container>
-        <div className="mt-14">
+        <div className="mt-12">
           <h3 className='uppercase'>The project</h3>
           <p className='mt-5'>Directory Path is a solution to help beginner coders to get the path to reach from one file to another. 
             <br />The goal is to make the navigation between documents easier and more efficient. </p>

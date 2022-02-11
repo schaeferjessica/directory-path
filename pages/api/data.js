@@ -1,10 +1,10 @@
-const testData = {
-  name: 'Your Project',
+const defaultData = {
+  name: 'Your-Project',
   children: [
     {
-      name: 'Pages',
+      name: 'pages',
       children: [
-        { name: 'API', 
+        { name: 'apt', 
         children: [
           {
             name: 'hello.js'
@@ -15,10 +15,10 @@ const testData = {
       ],
     },
     {
-      name: 'Public',
+      name: 'public',
     },
     {
-      name: 'Styles',
+      name: 'styles',
       children: [
         {
           name:'globals.css'
@@ -30,7 +30,7 @@ const testData = {
   ],
 };
 
-const testDataWithId = {
+const defaultDataWithId = {
   name: 'All Cryptos',
   _id: 0,
   children: [
@@ -82,7 +82,7 @@ const testDataWithId = {
   ],
 };
 
-const initializedTestData = {
+const initializedDefaultData = {
   name: 'All Cryptos',
   _id: 0,
   checked: 0,
@@ -140,8 +140,4 @@ const initializedTestData = {
   ],
 };
 
-export {
-  testData,
-  testDataWithId,
-  initializedTestData,
-};
+export { defaultData, defaultDataWithId, initializedDefaultData };
