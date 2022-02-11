@@ -14,18 +14,18 @@ const BasicTree = (props) => {
       checkbox.setAttribute('hidden', 'true')
     });
   
-    document.querySelectorAll('.TreeNode').forEach(item => {
-      const checkbox = item.querySelector('.checkboxDOM')
-      checkbox.addEventListener('change', () => {
-        if(checkbox.checked) {
-          item.classList.add('selected');
+  //   document.querySelectorAll('.TreeNode').forEach(item => {
+  //     const checkbox = item.querySelector('.checkboxDOM')
+  //     checkbox.addEventListener('change', () => {
+  //       if(checkbox.checked) {
+  //         item.classList.add('selected');
   
-        } else {
-          item.classList.remove('selected');
-        }
-      })
-    })
-  }
+  //       } else {
+  //         item.classList.remove('selected');
+  //       }
+  //     })
+  //   })
+   }
   
   const onTreeStateChange = (state, event) => {
     
@@ -44,29 +44,21 @@ const BasicTree = (props) => {
           checkedElements = checkedElements.concat(getChecked(child, branchPath))
         })
       } else if(branch.checked == 1) {
-          checkedElements.push(branchPath)
+          checkedElements.push({
+            path: branchPath,
+            el: branch
+          })
       }
       return checkedElements 
     }
 
-    console.log(getChecked(state, ''))
-
-    const uncheckSelected = () => {
-      let s = document.querySelectorAll('.selected')
-      return s
-    }
-    console.log('HELLO', uncheckSelected())
-    
     //console.log(getChecked(state, ''))
     /* console.log(state, event) */
 
     let checkedEl = getChecked(state, '')
     //console.log(checkedEl)
 
-    state.numChecked = checkedEl.length
-
-    state.fromEl = checkedEl[0]
-
+    console.log(state.firstEl, state.secondEl)
 
     if (checkedEl.length == 0){
       state.firstEl = undefined
@@ -74,41 +66,51 @@ const BasicTree = (props) => {
       state.firstEl = checkedEl[0]
       state.secondEl = undefined
     } else if (checkedEl.length == 2) {
-      if (state.firstEl == checkedEl[0]) {
+      if (state.firstEl.path == checkedEl[0].path) {
         state.secondEl = checkedEl[1]
       } else {
         state.secondEl = checkedEl[0]
       }
     } else if (checkedEl.length > 2){
-      
-      if (state.firstEl == checkedEl[0] && state.secondEl == checkedEl[1] ){
+      state.firstEl.el.checked = 0
+      state.secondEl.el.checked = 0
+      if (state.firstEl.path == checkedEl[0].path && state.secondEl.path == checkedEl[1].path ){
         state.firstEl = checkedEl[2]
-      } else if (state.firstEl == checkedEl[1] && state.secondEl == checkedEl[0] ){
+      } else if (state.firstEl.path == checkedEl[1].path && state.secondEl.path == checkedEl[0].path ){
         state.firstEl = checkedEl[2]
-      } else if (state.firstEl == checkedEl[0] && state.secondEl == checkedEl[2] ){
+      } else if (state.firstEl.path == checkedEl[0].path && state.secondEl.path == checkedEl[2].path ){
         state.firstEl = checkedEl[1]
-      } else if (state.firstEl == checkedEl[2] && state.secondEl == checkedEl[0] ){
+      } else if (state.firstEl.path == checkedEl[2].path && state.secondEl.path == checkedEl[0].path ){
         state.firstEl = checkedEl[1]
-      } else if (state.firstEl == checkedEl[1] && state.secondEl == checkedEl[2] ){
+      } else if (state.firstEl.path == checkedEl[1].path && state.secondEl.path == checkedEl[2].path ){
         state.firstEl = checkedEl[0]
-      } else if (state.firstEl == checkedEl[2] && state.secondEl == checkedEl[1] ){
+      } else if (state.firstEl.path == checkedEl[2].path && state.secondEl.path == checkedEl[1].path ){
         state.firstEl = checkedEl[0]
       }
       state.secondEl = undefined
     }
 
+    console.log(state.firstEl, state.secondEl)
+
+    // if (state.firstEl.path == undefined) {
+    //   console.log('select where you are and where you need to go')
+    // } else if (state.firstEl.path == checkedEl[0].path && state.secondEl == undefined) {
+    //   console.log('you are here')
+    //   console.log('now choose where to go')
+    // } 
+
     
-    let from = checkedEl[0] 
+    let from = state.firstEl
     if (from == null) {
       from = ''
     } else {
-      from = checkedEl[0]
+      from = state.firstEl.path
     }
-    let to = checkedEl[1]
+    let to = state.secondEl
     if (to == null) {
       to = ''
     } else {
-      to = checkedEl[1]
+      to = state.secondEl.path
     }
     
     function computePath(from, to) {
