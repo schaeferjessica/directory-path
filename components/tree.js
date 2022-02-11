@@ -15,24 +15,25 @@ const BasicTree = (props) => {
     });
 
     document.querySelectorAll('.TreeNode').forEach(item => {
-		const checkbox = item.querySelector('.checkboxDOM')
-		const checkboxDiv = item.querySelector('.CheckBox')
-		const checkboxSpan = item.querySelector('.checkbox-span')
+      const checkbox = item.querySelector('.checkboxDOM')
+      const checkboxDiv = item.querySelector('.CheckBox')
+      const checkboxSpan = item.querySelector('.checkbox-span')
 
-		if (!checkboxSpan) {
-			const span = document.createElement('span');
-			span.classList.add('checkbox-span');
-			checkboxDiv.appendChild(span);
-		}
+      if (!checkboxSpan) {
+        const span = document.createElement('span');
+        span.classList.add('checkbox-span');
+        checkboxDiv.appendChild(span);
+      }
 
-		checkbox.addEventListener('change', () => {
-			if(checkbox.checked) {
-				item.classList.add('selected');
-			} else {
-				item.classList.remove('selected');
-			}
-		})
-	})
+      checkbox.addEventListener('change', () => {
+        if(checkbox.checked) {
+          item.classList.add('selected');
+        } else {
+          item.classList.remove('selected');
+        }
+      })
+    })
+  }
 
   const onTreeStateChange = (state, event) => {
 
@@ -170,7 +171,7 @@ const BasicTree = (props) => {
     })
 
   }
-
+  
   return (
     <DynamicFileTreeImport data={defaultData} onChange={onTreeStateChange}/>
   );
