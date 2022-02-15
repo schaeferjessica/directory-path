@@ -24,9 +24,9 @@ export default function Index() {
             <small className="uppercase">Directory:</small>
             <div className="mt-4 box font-mono relative">
               <BasicTree setPathObj={setPathObj} />
-              <div className='absolute top-3 right-3'>
-                <button className='text-sm ml-2'>random</button>
-                <button className='text-sm ml-2'>rest</button>
+              <div className='absolute top-3.5 right-3'>
+                <button className='sm:text-sm text-xs ml-3'>random</button>
+                <button className='sm:text-sm text-xs ml-3'>rest</button>
               </div>
             </div> 
 
@@ -35,8 +35,8 @@ export default function Index() {
             <small className="uppercase">Relative Path:</small>
             <div className="mt-4 box font-mono relative">
               <Path pathObj={pathObj}/>
-              <div className='absolute top-3 right-3'>
-                <button className='text-sm'>copy</button>
+              <div className='absolute top-3.5 right-3'>
+                <button className='sm:text-sm text-xs'>copy</button>
               </div>
             </div>
           </div>
