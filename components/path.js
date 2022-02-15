@@ -1,6 +1,5 @@
 
 const Path = (props) => { 
-
   //where props is the object with the elements we defined on index (setPathObj and pathObj)
 
   return (

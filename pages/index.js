@@ -12,13 +12,12 @@ export default function Index() {
   //where setPathObj is the function to set the elements
 
   
-  const path  = './pages/index.js'
   useEffect( () => { document.querySelector('.copy-to-clipboard')
     .addEventListener('click', () => {
-      navigator.clipboard.writeText(path)
-      console.log(`copied to clipboard ${path}`)
+      navigator.clipboard.writeText(pathObj.path)
+      //console.log(`copied to clipboard ${pathObj.path}`)
     }
-  )}, [])
+  )}, [pathObj])
 
   return (
     <Layout>

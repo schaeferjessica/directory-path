@@ -66,8 +66,7 @@ const BasicTree = (props) => {
 
     let checkedEl = getChecked(state, '')
     //console.log(checkedEl)
-
-    console.log(state.firstEl, state.secondEl)
+    //console.log(state.firstEl, state.secondEl)
 
     if (checkedEl.length == 0){
       state.firstEl = undefined
@@ -99,7 +98,7 @@ const BasicTree = (props) => {
       state.secondEl = undefined
     }
 
-    console.log(state.firstEl, state.secondEl)
+    // console.log(state.firstEl, state.secondEl)
 
     // if (state.firstEl.path == undefined) {
     //   console.log('select where you are and where you need to go')
