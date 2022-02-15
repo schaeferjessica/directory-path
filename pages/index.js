@@ -22,11 +22,23 @@ export default function Index() {
         <div className="mt-12 grid grid-rows-2 md:grid-cols-2 gap-6 items-start md:grid-flow-col">
           <div className="row-start-2 md:row-start-1">
             <small className="uppercase">Directory:</small>
-            <div className="mt-4 box font-mono"><BasicTree setPathObj={setPathObj} /></div> 
+            <div className="mt-4 box font-mono relative">
+              <BasicTree setPathObj={setPathObj} />
+              <div className='absolute top-3 right-3'>
+                <button className='text-sm ml-2'>random</button>
+                <button className='text-sm ml-2'>rest</button>
+              </div>
+            </div> 
+
           </div>
           <div className="row-start-1">
             <small className="uppercase">Relative Path:</small>
-            <div className="mt-4 box font-mono"><Path pathObj={pathObj}/></div>
+            <div className="mt-4 box font-mono relative">
+              <Path pathObj={pathObj}/>
+              <div className='absolute top-3 right-3'>
+                <button className='text-sm'>copy</button>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
