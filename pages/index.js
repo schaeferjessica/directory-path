@@ -3,20 +3,27 @@ import Head from 'next/head'
 import Container from '../components/container'
 import BasicTree from '../components/tree'
 import Path from '../components/path'
-import {useState} from "react"
+import {useState, useEffect} from "react"
 
 export default function Index() {
-
 
   const [pathObj, setPathObj] = useState([]) 
   //where pathObjs is an abject with from, to and path
   //where setPathObj is the function to set the elements
 
+  
+  const path  = './pages/index.js'
+  useEffect( () => { document.querySelector('.copy-to-clipboard')
+    .addEventListener('click', () => {
+      navigator.clipboard.writeText(path)
+      console.log(`copied to clipboard ${path}`)
+    }
+  )}, [])
+
   return (
     <Layout>
       <Head>
         <title>Directory Path</title>
-
       </Head>
       <Container>
         <div className="mt-12 grid grid-rows-2 md:grid-cols-2 gap-6 items-start md:grid-flow-col">
@@ -36,7 +43,7 @@ export default function Index() {
             <div className="mt-4 box font-mono relative">
               <Path pathObj={pathObj}/>
               <div className='absolute top-3.5 right-3'>
-                <button className='sm:text-sm text-xs'>copy</button>
+                <button className='copy-to-clipboard sm:text-sm text-xs'>copy</button>
               </div>
             </div>
           </div>
