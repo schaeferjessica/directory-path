@@ -72,7 +72,7 @@ const dataTwo = {
   ],
 };
 
-const dataThee = {
+const dataThree = {
   name: 'Angular-Project',
   children: [
     {
@@ -102,4 +102,4 @@ const dataThee = {
   ],
 };
 
-export { dataDefault, dataOne, dataTwo, dataThee };
+export { dataDefault, dataOne, dataTwo, dataThree };

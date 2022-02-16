@@ -1,11 +1,14 @@
-import { dataDefault } from '../pages/api/data-default';
+import { dataDefault, dataOne, dataTwo, dataThree } from '../pages/api/data-default';
 import dynamic from 'next/dynamic';
+import {useState, useEffect} from "react"
 
 const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
   ssr: false,
 });
 
 const BasicTree = (props) => {
+
+  const [dataTree, setDataTree] = useState(dataDefault);
 
   const setupTree = () => {
     document.querySelectorAll('.FolderOpenIcon, .FolderIcon').forEach(item => {
@@ -107,7 +110,6 @@ const BasicTree = (props) => {
     //   console.log('now choose where to go')
     // }
 
-
     let from = state.firstEl
     if (from == null) {
       from = ''
@@ -128,7 +130,7 @@ const BasicTree = (props) => {
 
       let toParts = to.split('/');
       toParts.shift();
-      console.log(toParts);
+      //console.log(toParts);
 
       let extract = [];
       let remaining = [];
@@ -168,11 +170,23 @@ const BasicTree = (props) => {
       to: to,
       path: computePath(from, to)
     })
-
   }
+
+  useEffect( () => { 
+    const dataTreeOptions = [dataDefault, dataOne, dataTwo, dataThree]
+
+    const getRandomDataTree = () => {
+      return dataTreeOptions[Math.floor(Math.random() * dataTreeOptions.length)]
+    }
+    
+    document.querySelector('.random-tree-data').addEventListener('click', () => {
+      const dataTree = getRandomDataTree()
+      setDataTree(dataTree)
+    }
+  )}, [])
   
   return (
-    <DynamicFileTreeImport data={dataDefault} onChange={onTreeStateChange}/>
+    <DynamicFileTreeImport data={dataTree} onChange={onTreeStateChange}/>
   );
 };
 
