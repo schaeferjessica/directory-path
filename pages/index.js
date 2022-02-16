@@ -31,7 +31,7 @@ export default function Index() {
             <div className="mt-4 box font-mono relative">
               <BasicTree setPathObj={setPathObj} />
               <div className='absolute top-3.5 right-3'>
-                <button className='random-tree-data sm:text-sm text-xs ml-3'>next</button>
+                <button className='random-tree-data sm:text-sm text-xs ml-3'>random</button>
                 {/* <button className='sm:text-sm text-xs ml-3'>rest</button> */}
               </div>
             </div> 

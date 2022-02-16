@@ -173,12 +173,11 @@ const BasicTree = (props) => {
   }
 
   useEffect( () => { 
-    const dataTreeOptions = [dataDefault, dataOne, dataTwo, dataThree]
+    const dataTreeOptions = [ dataOne, dataTwo, dataDefault, dataThree]
 
     const getNextDataTree = () => {
       let nextDataTree = dataTreeOptions.shift()
       dataTreeOptions.push(nextDataTree)
-      console.log(nextDataTree)
       return nextDataTree
     }
     
