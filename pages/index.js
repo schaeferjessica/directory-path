@@ -26,7 +26,7 @@ export default function Index() {
       </Head>
       <Container>
         <div className="mt-12 grid grid-rows-2 md:grid-cols-2 gap-6 items-start md:grid-flow-col">
-          <div className="row-start-2 md:row-start-1">
+          <div className="row-start-2 md:row-start-1 mr-1.5">
             <small className="uppercase">Directory:</small>
             <div className="mt-4 box font-mono relative">
               <BasicTree setPathObj={setPathObj} />
@@ -37,7 +37,7 @@ export default function Index() {
             </div> 
 
           </div>
-          <div className="row-start-1">
+          <div className="row-start-1 mr-1.5">
             <small className="uppercase">Relative Path:</small>
             <div className="mt-4 box font-mono relative">
               <Path pathObj={pathObj}/>

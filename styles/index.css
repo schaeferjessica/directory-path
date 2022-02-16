@@ -53,9 +53,19 @@
   display: flex;
   margin-left: 5px;
 }
-.iconContainer > svg {
+.iconContainer > .icon {
   padding: 1px;
   margin: 1px;
+  width: 15px;
+  height: 15px;
+}
+.iconContainer > .icon.FolderOpenIcon {
+  width: 17px;
+  height: 17px;
+}
+.iconContainer > .icon.FolderIcon {
+  width: 17px;
+  height: 17px;
 }
 .CheckBox {
   align-items: flex-start;
@@ -68,7 +78,6 @@
   opacity: 0;
   height: 17px;
   width: 17px;
-
 }
 .checkbox-span { 
   position: absolute;
