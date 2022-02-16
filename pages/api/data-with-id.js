@@ -1,36 +1,4 @@
-const defaultData = {
-  name: 'Your-Project',
-  children: [
-    {
-      name: 'pages',
-      children: [
-        { name: 'apt', 
-        children: [
-          {
-            name: 'hello.js'
-          }
-        ] },
-        { name: 'app.js' },
-        { name: 'index.js' },
-      ],
-    },
-    {
-      name: 'public',
-    },
-    {
-      name: 'styles',
-      children: [
-        {
-          name:'globals.css'
-        }
-      ]
-    },
-    { name: 'package-lock.json' },
-    { name: 'package.json' },
-  ],
-};
-
-const defaultDataWithId = {
+const dataWithId = {
   name: 'All Cryptos',
   _id: 0,
   children: [
@@ -82,7 +50,7 @@ const defaultDataWithId = {
   ],
 };
 
-const initializedDefaultData = {
+const initializedData = {
   name: 'All Cryptos',
   _id: 0,
   checked: 0,
@@ -140,4 +108,4 @@ const initializedDefaultData = {
   ],
 };
 
-export { defaultData, defaultDataWithId, initializedDefaultData };
+export { dataWithId, initializedData };

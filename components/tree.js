@@ -1,4 +1,4 @@
-import { defaultData } from '../pages/api/data';
+import { dataDefault } from '../pages/api/data-default';
 import dynamic from 'next/dynamic';
 
 const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
@@ -172,7 +172,7 @@ const BasicTree = (props) => {
   }
   
   return (
-    <DynamicFileTreeImport data={defaultData} onChange={onTreeStateChange}/>
+    <DynamicFileTreeImport data={dataDefault} onChange={onTreeStateChange}/>
   );
 };
 

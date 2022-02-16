@@ -3,7 +3,7 @@ import Head from 'next/head'
 export default function Meta() {
   return (
     <Head lang="en">
-    <meta charset="utf-8"/>
+    <meta charSet="utf-8"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta property="og:title" content="Directory Path Generator" key="title" />
     <meta name="description" content="A Directory Path Generator for Begginer Coders. Get the path required to access a certain file or module in a fast and clever way."/ >
@@ -17,7 +17,7 @@ export default function Meta() {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"></link>
     <link rel="manifest" href="/site.webmanifest"></link>
 
-    <meta name="theme-color" content="#000" />
+    <meta name="theme-color" content="#223956" />
     <meta
         name="description"
         content={`statically generated using Next.js`}
