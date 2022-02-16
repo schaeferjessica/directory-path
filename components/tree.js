@@ -175,12 +175,15 @@ const BasicTree = (props) => {
   useEffect( () => { 
     const dataTreeOptions = [dataDefault, dataOne, dataTwo, dataThree]
 
-    const getRandomDataTree = () => {
-      return dataTreeOptions[Math.floor(Math.random() * dataTreeOptions.length)]
+    const getNextDataTree = () => {
+      let nextDataTree = dataTreeOptions.shift()
+      dataTreeOptions.push(nextDataTree)
+      console.log(nextDataTree)
+      return nextDataTree
     }
     
     document.querySelector('.random-tree-data').addEventListener('click', () => {
-      const dataTree = getRandomDataTree()
+      const dataTree = getNextDataTree()
       setDataTree(dataTree)
     }
   )}, [])
