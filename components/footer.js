@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex justify-between items-center">
           
           <div className="CheckBox">
-            <input className="checkbox-color-highlight checkbox-color--from checkboxDOM" type="checkbox"></input>
+            <input className="checkboxDOM checkbox-color-highlight checkbox-color--from" type="checkbox"></input>
             <span className="checkbox-span"></span>
           </div>
           

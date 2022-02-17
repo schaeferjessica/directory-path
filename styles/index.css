@@ -33,10 +33,10 @@
 }
 
 :root {
-  --dark: rgb(24, 24, 24);
+  --dark: #181818;
   --light: #fff;
   --color-from: #dae4ff;
-  --color-to: antiquewhite;
+  --color-to: #faebd7;
 }
 
 [data-reactroot] { 
@@ -92,7 +92,7 @@
   width: 17px;
   box-shadow: 2px 2px var(--dark);
 }
-.checkbox-span:before { 
+.checkbox-span::before { 
   border: 9px solid var(--dark);
   content: "";
   position: absolute;
@@ -102,7 +102,7 @@
   height: 100%;
   display: inline-block;
 }
-.checkbox-span:after {
+.checkbox-span::after {
   height: 15px;
   width: 15px;
   position: absolute;
@@ -139,6 +139,12 @@ input[type=checkbox]:checked.checkbox-color--to + .checkbox-span:after {
   background-color: var(--color-to);
 }
 
+.checkboxDOM.checkbox-color--from .checkbox-span { 
+  box-shadow: 2px 2px var(--color-to);
+}
+.checkboxDOM.checkbox-color--from .checkbox-span::before { 
+  border: 9px solid var(--color-to);
+}
 
 .fileNameCheckedFrom {
   background-color: var(--color-from);

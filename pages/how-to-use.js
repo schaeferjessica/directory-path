@@ -42,7 +42,7 @@ export default function About() {
 
             <div className="CheckBox ml-2 mr-2 inline">
               <input className="checkboxDOM checkbox-color--from" type="checkbox"></input>
-              <span className="checkbox-span checkbox-span--color-from"></span>
+              <span className="checkbox-span"></span>
             </div>
             
             <span>in the bottom left corner to see the path color highlighted</span>
