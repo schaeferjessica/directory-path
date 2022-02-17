@@ -11,7 +11,12 @@ export default function Footer() {
             <span className="checkbox-span"></span>
           </div>
           
-          <small>© 2022 UNIX PATH - build with ♥ and <a className="underline-text uppercase" href="https://nextjs.org/">Next.js</a></small>
+          <small>
+            <span>© 2022</span> 
+            <strong className="uppercase font-normal"> ./_relative-path</strong> 
+            <span> - build with ♥ and </span>
+            <a className="underline-text uppercase" href="https://nextjs.org/">Next.js</a>
+          </small>
         </div>
       </Container>
     </footer>
