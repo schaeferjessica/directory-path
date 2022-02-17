@@ -20,7 +20,7 @@ export default function Meta() {
     <meta name="theme-color" content="#181818" />
     <meta
         name="relative path generator"
-        content={`find your path via relative path generator`}
+        content={`find the right path via relative path generator`}
       />
     </Head>
   )

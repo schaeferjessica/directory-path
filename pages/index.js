@@ -22,7 +22,7 @@ export default function Index() {
   return (
     <Layout>
       <Head>
-        <title>Directory Path</title>
+        <title>relative path</title>
       </Head>
       <Container>
         <div className="mt-4 sm:mt-12 grid grid-rows-2 md:grid-cols-2 gap-6 items-start md:grid-flow-col">

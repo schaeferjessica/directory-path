@@ -1,30 +1,39 @@
-# Directory Path
+**relative path**
 
-Directory Path is a solution to help beginner coders to get the path on their projects. 
+find the right path via relative path generator.
 
-## ⚡️ Installation
+
+⚡️ **Installation**
 
 Install packages with: 
 
 ```bash
-$ yarn
-or
 $ npm i
 ```
-Start the app in development mode with:
-
+start the app in development mode with:
 
 ```bash
-$ yarn dev
-or
 $ npm run dev
 ```
+
+💅 **styling**
 
 *tailwindcss - setup for nextjs:*
 https://tailwindcss.com/docs/guides/nextjs
 
-## 😎 Current running version
+
+✨ **current running version**
 
 *vercel - deployment:*
 https://directory-path.vercel.app/
+
+
+**Improvements and Bugs**
+
+Please feel free to open a new issue [here](https://github.com/schaeferjessica/directory-path/issues) with your suggestions or any bugs which you may have come across.
+
+
+**License**
+
+[MIT](https://github.com/ghosh/uiGradients/blob/master/LICENSE.md)
 
