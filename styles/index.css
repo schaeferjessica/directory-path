@@ -35,7 +35,8 @@
 :root {
   --dark: rgb(24, 24, 24);
   --light: #fff;
-  --color: #bfe9ff;
+  --color-from: #dae4ff;
+  --color-to: antiquewhite;
 }
 
 [data-reactroot] { 
@@ -118,12 +119,30 @@ input[hidden] + .checkbox-span {
   display: none;
 }
 
-.checkbox-span.checkbox-span--color { 
-  box-shadow: 2px 2px var(--color);
+.tree-node--color-from .checkbox-span { 
+  box-shadow: 2px 2px var(--color-from);
 }
-.checkbox-span.checkbox-span--color:before { 
-  border: 9px solid var(--color);
+.tree-node--color-from .checkbox-span:before { 
+  border: 9px solid var(--color-from);
 }
-input[type=checkbox]:checked + .checkbox-span.checkbox-span--color:after {
-  background-color: var(--color);
+.tree-node--color-from input[type=checkbox]:checked + .checkbox-span:after {
+  background-color: var(--color-from);
+}
+
+.tree-node--color-to .checkbox-span { 
+  box-shadow: 2px 2px var(--color-to);
+}
+.tree-node--color-to .checkbox-span:before { 
+  border: 9px solid var(--color-to);
+}
+.checkbox-span--color-to input[type=checkbox]:checked + .checkbox-span:after {
+  background-color: var(--color-to);
+}
+
+
+.fileNameCheckedFrom {
+  background-color: var(--color-from);
+}
+.fileNameCheckedTo {
+  background-color: var(--color-to);
 }

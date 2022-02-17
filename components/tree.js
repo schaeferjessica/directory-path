@@ -10,12 +10,32 @@ const BasicTree = (props) => {
 
   const [dataTree, setDataTree] = useState(dataVue);
 
+  const checkboxColor = document.querySelector('.checkboxColorHighlight')
+
   const setupTree = () => {
     document.querySelectorAll('.FolderOpenIcon, .FolderIcon').forEach(item => {
       const checkbox = item.parentElement.parentElement.querySelector('.checkboxDOM');
       checkbox.disabled = true;
       checkbox.setAttribute('hidden', 'true')
     });
+
+    const handlePathColorHighlight = (element, className, isChecked) => {
+      if (element){
+        if (isChecked) {
+          element.classList.add(className);
+        } else {
+          element.classList.remove(className);
+        }
+      }
+    }
+
+    checkboxColor.addEventListener('change', () => {
+      const selectedPathFrom = document.querySelector('.selectedPath--from');
+      const selectedPathTo = document.querySelector('.selectedPath--to');
+
+      handlePathColorHighlight(selectedPathFrom, 'fileNameCheckedFrom', checkboxColor.checked);
+      handlePathColorHighlight(selectedPathTo, 'fileNameCheckedTo', checkboxColor.checked);
+    })
 
     document.querySelectorAll('.TreeNode').forEach(item => {
       const checkbox = item.querySelector('.checkboxDOM')
@@ -27,6 +47,14 @@ const BasicTree = (props) => {
         span.classList.add('checkbox-span');
         checkboxDiv.appendChild(span);
       }
+
+      checkboxColor.addEventListener('change', () => {
+        if (checkboxColor.checked) {
+          item.classList.add('tree-node--color-from');
+        } else {
+          item.classList.remove('tree-node--color-from');
+        }
+      })
 
       checkbox.addEventListener('change', () => {
         if(checkbox.checked) {

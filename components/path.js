@@ -6,8 +6,15 @@ const Path = (props) => {
     <div>
       <span className="block">{props.pathObj.path}</span>
       <br />
-      <small className="block">from: {props.pathObj.from}</small>
-      <small className="block">to:&nbsp;&nbsp; {props.pathObj.to}</small>
+      <small className="block">
+        <span>from:</span>
+        <span className="selectedPath selectedPath--from ml-1">{props.pathObj.from}</span>
+      </small>
+
+      <small className="block mt-1.5">
+        <span>to:&nbsp;&nbsp;</span>
+        <span className="selectedPath selectedPath--to ml-1">{props.pathObj.to}</span>
+      </small>
     </div>
   );
 };

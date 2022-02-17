@@ -25,7 +25,7 @@ export default function About() {
 
             <span>to select the <strong className='uppercase font-normal'>file</strong> you would like the path going <strong className='uppercase font-normal'>from</strong></span>
             <br />
-            <span>then click the secound box</span>
+            <span>then click the second box</span>
 
             <div className="CheckBox ml-2 mr-2">
               <input className="checkboxDOM" type="checkbox"></input>
@@ -40,11 +40,13 @@ export default function About() {
             <h2 className='uppercase mb-3'>nice to have</h2>
             <span>click the box</span>
 
-            <div className="CheckBox ml-2 mr-2">
-              <input className="checkboxDOM" type="checkbox"></input>
-              <span className="checkbox-span checkbox-span--color"></span>
+            <div className="tree-node--color-from inline">
+              <div className="CheckBox checkbox-span--color-from ml-2 mr-2 inline">
+                <input className="checkboxDOM checkboxColorHighlight" type="checkbox"></input>
+                <span className="checkbox-span checkbox-span--color-from"></span>
+              </div>
             </div>
-
+            
             <span>in the bottom left corner to see the path color highlighted</span>
           </div>
          
