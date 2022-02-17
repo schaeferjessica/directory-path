@@ -6,7 +6,7 @@ export default function Meta() {
     <meta charSet="utf-8"/>
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta property="og:title" content="Directory Path Generator" key="title" />
-    <meta name="description" content="A Directory Path Generator for Begginer Coders. Get the path required to access a certain file or module in a fast and clever way."/ >
+    <meta name="description" content="reach from one file to another via the directory path generator"/ >
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/ >
 
     <link rel="preconnect" href="https://fonts.googleapis.com"></link>
