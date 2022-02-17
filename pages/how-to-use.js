@@ -12,6 +12,7 @@ export default function About() {
       <Container>
         <div className="mt-12">
           <div>
+            
             <h2 className='uppercase mb-3'>get startet</h2>
             <p>how to find your path via Directory Path Generator:</p>
             <br />
@@ -33,6 +34,18 @@ export default function About() {
 
             <span>to select the <strong className='uppercase font-normal'>file</strong> you would like the path going <strong className='uppercase font-normal'>to</strong></span>
             <p className='mt-3'>the <strong className='uppercase font-normal'>relative path</strong> will be generated for you :)</p>
+          </div>
+
+          <div className='mt-8'>
+            <h2 className='uppercase mb-3'>nice to have</h2>
+            <span>click the box</span>
+
+            <div className="CheckBox ml-2 mr-2">
+              <input className="checkboxDOM" type="checkbox"></input>
+              <span className="checkbox-span checkbox-span--color"></span>
+            </div>
+
+            <span>in the bottom left corner to see the path color highlighted</span>
           </div>
          
 
