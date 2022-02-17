@@ -6,11 +6,9 @@ export default function Footer() {
       <Container>
         <div className="flex justify-between items-center">
           
-          <div className="tree-node--color-from inline">
-            <div className="CheckBox checkbox-span--color-from ml-2 mr-2 inline">
-              <input className="checkboxDOM checkboxColorHighlight" type="checkbox"></input>
-              <span className="checkbox-span checkbox-span--color-from"></span>
-            </div>
+          <div className="CheckBox">
+            <input className="checkboxColorHighlight checkbox-color--from checkboxDOM" type="checkbox"></input>
+            <span className="checkbox-span"></span>
           </div>
           
           <small>© 2022 UNIX PATH - build with ♥ and <a className="underline-text uppercase" href="https://nextjs.org/">Next.js</a></small>

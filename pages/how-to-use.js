@@ -40,11 +40,9 @@ export default function About() {
             <h2 className='uppercase mb-3'>nice to have</h2>
             <span>click the box</span>
 
-            <div className="tree-node--color-from inline">
-              <div className="CheckBox checkbox-span--color-from ml-2 mr-2 inline">
-                <input className="checkboxDOM checkboxColorHighlight" type="checkbox"></input>
-                <span className="checkbox-span checkbox-span--color-from"></span>
-              </div>
+            <div className="CheckBox ml-2 mr-2 inline">
+              <input className="checkboxDOM checkbox-color--from" type="checkbox"></input>
+              <span className="checkbox-span checkbox-span--color-from"></span>
             </div>
             
             <span>in the bottom left corner to see the path color highlighted</span>
