@@ -25,7 +25,7 @@ export default function Index() {
         <title>Directory Path</title>
       </Head>
       <Container>
-        <div className="mt-12 grid grid-rows-2 md:grid-cols-2 gap-6 items-start md:grid-flow-col">
+        <div className="mt-4 sm:mt-12 grid grid-rows-2 md:grid-cols-2 gap-6 items-start md:grid-flow-col">
           <div className="row-start-2 md:row-start-1 mr-1.5">
             <small className="uppercase">Directory:</small>
             <div className="mt-4 box font-mono relative">
