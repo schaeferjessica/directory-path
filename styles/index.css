@@ -119,23 +119,23 @@ input[hidden] + .checkbox-span {
   display: none;
 }
 
-.tree-node--color-from .checkbox-span { 
+.checkbox-color--from .checkbox-span { 
   box-shadow: 2px 2px var(--color-from);
 }
-.tree-node--color-from .checkbox-span:before { 
+.checkbox-color--from .checkbox-span:before { 
   border: 9px solid var(--color-from);
 }
-.tree-node--color-from input[type=checkbox]:checked + .checkbox-span:after {
+ input[type=checkbox]:checked.checkbox-color--from + .checkbox-span:after {
   background-color: var(--color-from);
 }
 
-.tree-node--color-to .checkbox-span { 
+.checkbox-color--to .checkbox-span { 
   box-shadow: 2px 2px var(--color-to);
 }
-.tree-node--color-to .checkbox-span:before { 
+.checkbox-color--to .checkbox-span:before { 
   border: 9px solid var(--color-to);
 }
-.checkbox-span--color-to input[type=checkbox]:checked + .checkbox-span:after {
+input[type=checkbox]:checked.checkbox-color--to + .checkbox-span:after {
   background-color: var(--color-to);
 }
 

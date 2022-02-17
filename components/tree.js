@@ -50,9 +50,9 @@ const BasicTree = (props) => {
 
       checkboxColor.addEventListener('change', () => {
         if (checkboxColor.checked) {
-          item.classList.add('tree-node--color-from');
+          checkbox.classList.add('checkbox-color--from');
         } else {
-          item.classList.remove('tree-node--color-from');
+          checkbox.classList.remove('checkbox-color--from');
         }
       })
     })
