@@ -10,8 +10,6 @@ const BasicTree = (props) => {
 
   const [dataTree, setDataTree] = useState(dataVue);
 
-  const checkboxColor = document.querySelector('.checkboxColorHighlight')
-
   const setupTree = () => {
     document.querySelectorAll('.FolderOpenIcon, .FolderIcon').forEach(item => {
       const checkbox = item.parentElement.parentElement.querySelector('.checkboxDOM');
@@ -28,6 +26,8 @@ const BasicTree = (props) => {
         }
       }
     }
+
+    const checkboxColor = document.querySelector('.checkboxColorHighlight')
 
     checkboxColor.addEventListener('change', () => {
       const selectedPathFrom = document.querySelector('.selectedPath--from');
