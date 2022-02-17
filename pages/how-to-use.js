@@ -32,7 +32,7 @@ export default function About() {
             </div>
 
             <span>to select the <strong className='uppercase font-normal'>file</strong> you would like the path going <strong className='uppercase font-normal'>to</strong></span>
-            <p className='mt-3'>the RELATIVE PATH will be generate for you :)</p>
+            <p className='mt-3'>the <strong className='uppercase font-normal'>relative path</strong> will be generated for you :)</p>
           </div>
          
 
