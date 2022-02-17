@@ -1,4 +1,4 @@
-import { dataNext, dataVue, dataJS, dataAngular } from '../pages/api/data-default';
+import { dataNext, dataReact, dataVue, dataJS, dataAngular } from '../pages/api/data';
 import dynamic from 'next/dynamic';
 import {useState, useEffect} from "react"
 
@@ -173,7 +173,7 @@ const BasicTree = (props) => {
   }
 
   useEffect( () => { 
-    const dataTreeOptions = [ dataNext, dataVue, dataJS, dataAngular ]
+    const dataTreeOptions = [ dataNext, dataReact, dataVue, dataJS, dataAngular ]
 
     const getNextDataTree = () => {
       let nextDataTree = dataTreeOptions.shift()

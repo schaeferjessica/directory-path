@@ -33,6 +33,28 @@ const dataNext = {
   ],
 };
 
+const dataReact = {
+  name: 'React-Project',
+  children: [
+    {
+      name: 'public',
+      children: [
+        { name: 'index.html' },
+      ],
+    },
+    {
+      name: 'src',
+      children: [
+        { name: 'App.js' },
+        { name: 'index.js' },
+        { name: 'style.css' },
+      ],
+    },
+    { name: 'package.json' },
+    { name: 'README.md' },
+  ],
+};
+
 const dataVue = {
   name: 'VUE3-Project',
   children: [
@@ -102,4 +124,4 @@ const dataAngular = {
   ],
 };
 
-export { dataNext, dataVue, dataJS, dataAngular };
+export { dataNext, dataReact, dataVue, dataJS, dataAngular };
