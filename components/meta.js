@@ -19,8 +19,8 @@ export default function Meta() {
 
     <meta name="theme-color" content="#223956" />
     <meta
-        name="description"
-        content={`statically generated using Next.js`}
+        name="directory path generator"
+        content={`find your path via directory path generator`}
       />
     </Head>
   )
