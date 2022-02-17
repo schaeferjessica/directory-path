@@ -3,8 +3,8 @@ module.exports = {
   theme: {        
     extend: {
       colors: {
-        'midnight': '#223956',
-        'lavender': '#D3DAF2',
+        'dark': 'rgb(24, 24, 24)',
+        'light': '#D3DAF2',
       },
       keyframes: {
         gradient: {
