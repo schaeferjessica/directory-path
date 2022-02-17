@@ -119,20 +119,20 @@ input[hidden] + .checkbox-span {
   display: none;
 }
 
-.checkbox-color--from .checkbox-span { 
+.checkbox-color--from + .checkbox-span { 
   box-shadow: 2px 2px var(--color-from);
 }
-.checkbox-color--from .checkbox-span::before { 
+.checkbox-color--from + .checkbox-span::before { 
   border: 9px solid var(--color-from);
 }
  input[type=checkbox]:checked.checkbox-color--from + .checkbox-span:after {
   background-color: var(--color-from);
 }
 
-.checkbox-color--to .checkbox-span { 
+.checkbox-color--to + .checkbox-span { 
   box-shadow: 2px 2px var(--color-to);
 }
-.checkbox-color--to .checkbox-span::before { 
+.checkbox-color--to + .checkbox-span::before { 
   border: 9px solid var(--color-to);
 }
 input[type=checkbox]:checked.checkbox-color--to + .checkbox-span:after {
