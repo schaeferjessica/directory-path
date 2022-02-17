@@ -4,16 +4,16 @@ const Path = (props) => {
 
   return (
     <div>
-      <span className="block">{props.pathObj.path}</span>
-      <br />
-      <small className="block">
+      <span className="block mb-4">{props.pathObj.path}</span>
+
+      <small className="block mb-1.5">
         <span>from:</span>
-        <span className="selectedPath selectedPath--from ml-1">{props.pathObj.from}</span>
+        <span className="selectedPath--from ml-1">{props.pathObj.from}</span>
       </small>
 
-      <small className="block mt-1.5">
+      <small className="block">
         <span>to:&nbsp;&nbsp;</span>
-        <span className="selectedPath selectedPath--to ml-1">{props.pathObj.to}</span>
+        <span className="selectedPath--to ml-1">{props.pathObj.to}</span>
       </small>
     </div>
   );

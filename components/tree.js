@@ -27,7 +27,7 @@ const BasicTree = (props) => {
       }
     }
 
-    const checkboxColor = document.querySelector('.checkboxColorHighlight')
+    const checkboxColor = document.querySelector('.checkbox-color-highlight')
 
     checkboxColor.addEventListener('change', () => {
       const selectedPathFrom = document.querySelector('.selectedPath--from');
