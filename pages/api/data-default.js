@@ -43,7 +43,7 @@ const dataVue = {
           name: 'index.html', 
         },
         { 
-          name: 'src.js',
+          name: 'src',
           children: [
             {
               name: 'HelloWorld.vue'
