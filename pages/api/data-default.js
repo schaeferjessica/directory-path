@@ -1,4 +1,4 @@
-const dataDefault = {
+const dataNext = {
   name: 'NEXT.JS-Project',
   children: [
     {
@@ -33,7 +33,7 @@ const dataDefault = {
   ],
 };
 
-const dataOne = {
+const dataVue = {
   name: 'VUE3-Project',
   children: [
     {
@@ -60,7 +60,7 @@ const dataOne = {
   ],
 };
 
-const dataTwo = {
+const dataJS = {
   name: 'JavaScript-Project',
   children: [
     { name: 'index.html' },
@@ -72,7 +72,7 @@ const dataTwo = {
   ],
 };
 
-const dataThree = {
+const dataAngular = {
   name: 'Angular-Project',
   children: [
     {
@@ -102,4 +102,4 @@ const dataThree = {
   ],
 };
 
-export { dataDefault, dataOne, dataTwo, dataThree };
+export { dataNext, dataVue, dataJS, dataAngular };

@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       colors: {
         'dark': 'rgb(24, 24, 24)',
-        'light': '#D3DAF2',
+        'light': '#fff',
       },
       keyframes: {
         gradient: {

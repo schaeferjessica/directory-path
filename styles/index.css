@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-dark text-sm sm:text-base break-all selection:bg-dark selection:text-white;
+    @apply text-dark text-sm sm:text-base break-all selection:bg-dark selection:text-light;
   }
   h1 {
     @apply text-2xl sm:text-3xl;

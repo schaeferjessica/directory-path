@@ -1,4 +1,4 @@
-import { dataDefault, dataOne, dataTwo, dataThree } from '../pages/api/data-default';
+import { dataNext, dataVue, dataJS, dataAngular } from '../pages/api/data-default';
 import dynamic from 'next/dynamic';
 import {useState, useEffect} from "react"
 
@@ -8,7 +8,7 @@ const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
 
 const BasicTree = (props) => {
 
-  const [dataTree, setDataTree] = useState(dataDefault);
+  const [dataTree, setDataTree] = useState(dataVue);
 
   const setupTree = () => {
     document.querySelectorAll('.FolderOpenIcon, .FolderIcon').forEach(item => {
@@ -173,7 +173,7 @@ const BasicTree = (props) => {
   }
 
   useEffect( () => { 
-    const dataTreeOptions = [ dataOne, dataTwo, dataDefault, dataThree]
+    const dataTreeOptions = [ dataNext, dataVue, dataJS, dataAngular ]
 
     const getNextDataTree = () => {
       let nextDataTree = dataTreeOptions.shift()
