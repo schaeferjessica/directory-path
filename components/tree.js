@@ -9,36 +9,16 @@ const DynamicFileTreeImport = dynamic(() => import('react-folder-tree'), {
 const BasicTree = (props) => {
 
   const [dataTree, setDataTree] = useState(dataVue);
-
-  const setupTree = () => {
+  
+  const createCheckboxes = () => {
     document.querySelectorAll('.FolderOpenIcon, .FolderIcon').forEach(item => {
       const checkbox = item.parentElement.parentElement.querySelector('.checkboxDOM');
       checkbox.disabled = true;
       checkbox.setAttribute('hidden', 'true')
     });
 
-    const handlePathColorHighlight = (element, className, isChecked) => {
-      if (element){
-        if (isChecked) {
-          element.classList.add(className);
-        } else {
-          element.classList.remove(className);
-        }
-      }
-    }
-
-    const checkboxColor = document.querySelector('.checkbox-color-highlight')
-
-    checkboxColor.addEventListener('change', () => {
-      const selectedPathFrom = document.querySelector('.selectedPath--from');
-      const selectedPathTo = document.querySelector('.selectedPath--to');
-
-      handlePathColorHighlight(selectedPathFrom, 'fileNameCheckedFrom', checkboxColor.checked);
-      handlePathColorHighlight(selectedPathTo, 'fileNameCheckedTo', checkboxColor.checked);
-    })
-
-    document.querySelectorAll('.TreeNode').forEach(item => {
-      const checkbox = item.querySelector('.checkboxDOM')
+    const treeNodes = document.querySelectorAll('.TreeNode');
+    treeNodes.forEach(item => {
       const checkboxDiv = item.querySelector('.CheckBox')
       const checkboxSpan = item.querySelector('.checkbox-span')
 
@@ -47,26 +27,61 @@ const BasicTree = (props) => {
         span.classList.add('checkbox-span');
         checkboxDiv.appendChild(span);
       }
+    })
+  }
 
-      checkboxColor.addEventListener('change', () => {
-        if (checkboxColor.checked) {
-          checkbox.classList.add('checkbox-color--from');
-        } else {
-          checkbox.classList.remove('checkbox-color--from');
-        }
-        // TODO: if second checkbox is checked, add class to checkbox 
-        // TODO: checkbox.classList.add('checkbox-color--to');
-        // TODO: checkbox.classList.remove('checkbox-color--to');
-      })
+  const handlePathColorHighlight = (element, className, isChecked) => {
+    if (element){
+      if (isChecked) {
+        element.classList.add(className);
+      } else {
+        element.classList.remove(className);
+      }
+    }
+  }
+
+  const handleColorCheckboxState = (isChecked) => {
+    console.log(isChecked)
+    const selectedPathFrom = document.querySelector('.selectedPath--from');
+    const selectedPathTo = document.querySelector('.selectedPath--to');
+    const treeNodes = document.querySelectorAll('.TreeNode');
+
+    handlePathColorHighlight(selectedPathFrom, 'fileNameCheckedFrom', isChecked);
+    handlePathColorHighlight(selectedPathTo, 'fileNameCheckedTo', isChecked);
+    console.log(treeNodes)
+    treeNodes.forEach(item => {
+      const checkbox = item.querySelector('.checkboxDOM')
+      
+      if (isChecked) {
+        checkbox.classList.add('checkbox-color--from');
+      } else {
+        checkbox.classList.remove('checkbox-color--from');
+      }
+    })
+
+    localStorage.setItem('relative-path-checkbox-color', isChecked);
+  }
+
+  const setupTree = () => {
+    const colorCheckboxIsActive = localStorage.getItem('relative-path-checkbox-color');
+    if (colorCheckboxIsActive !== 'undefined') {
+      handleColorCheckboxState(colorCheckboxIsActive === 'true')
+    }
+
+    const checkboxColor = document.querySelector('.checkbox-color-highlight')
+    checkboxColor.addEventListener('change', () => {
+      handleColorCheckboxState(checkboxColor.checked);
     })
   }
 
   const onTreeStateChange = (state, event) => {
-
+    
     if (state.setupDone == undefined){
       setupTree()
       state.setupDone = true
     }
+
+    createCheckboxes();
 
     const getChecked = (branch, path) => {
       let checkedElements = []
@@ -207,8 +222,8 @@ const BasicTree = (props) => {
     document.querySelector('.random-tree-data').addEventListener('click', () => {
       const dataTree = getNextDataTree()
       setDataTree(dataTree)
-    }
-  )}, [])
+    });
+  }, [])
   
   return (
     <DynamicFileTreeImport data={dataTree} onChange={onTreeStateChange}/>
