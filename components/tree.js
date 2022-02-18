@@ -54,6 +54,9 @@ const BasicTree = (props) => {
         } else {
           checkbox.classList.remove('checkbox-color--from');
         }
+        // TODO: if second checkbox is checked, add class to checkbox 
+        // TODO: checkbox.classList.add('checkbox-color--to');
+        // TODO: checkbox.classList.remove('checkbox-color--to');
       })
     })
   }
