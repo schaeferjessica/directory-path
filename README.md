@@ -11,7 +11,7 @@
 ```bash
 $ npm i
 ```
-*start the app in development mode*
+*start the project [local](http://localhost:3000/)*
 
 ```bash
 $ npm run dev
@@ -29,7 +29,7 @@ $ npm run dev
 ✨ ***current running version***
 
 *vercel - deployment:*
-*https://directory-path.vercel.app/*
+*https://relative-path.vercel.app/*
 
 &nbsp;
 
