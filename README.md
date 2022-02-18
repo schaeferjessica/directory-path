@@ -8,8 +8,6 @@
 
 *Install packages*
 
-&nbsp;
-
 ```bash
 $ npm i
 ```
