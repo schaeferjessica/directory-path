@@ -8,12 +8,12 @@ const Path = (props) => {
 
       <small className="block mb-1.5">
         <span>from:</span>
-        <span className="selectedPath--from ml-1">{props.pathObj.from}</span>
+        <span className="selectedPath--from ml-1 checkbox-color--from" >{props.pathObj.from}</span>
       </small>
 
       <small className="block">
         <span>to:&nbsp;&nbsp;</span>
-        <span className="selectedPath--to ml-1">{props.pathObj.to}</span>
+        <span className="selectedPath--to ml-1 checkbox-color--to">{props.pathObj.to}</span>
       </small>
     </div>
   );

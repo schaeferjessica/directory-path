@@ -26,7 +26,7 @@ const BasicTree = (props) => {
         const span = document.createElement('span');
         span.classList.add('checkbox-span');
         checkboxDiv.appendChild(span);
-      }
+      } 
     })
   }
 
@@ -89,7 +89,6 @@ const BasicTree = (props) => {
       let branchPath = path + '/' + branch.name
 
       if(branch.hasOwnProperty('isOpen')) {
-        /* console.log(branch) */
         branch.children.forEach((child,i) => {
           checkedElements = checkedElements.concat(getChecked(child, branchPath))
         })
@@ -102,12 +101,17 @@ const BasicTree = (props) => {
       return checkedElements
     }
 
-    /* console.log(getChecked(state, '')) */
-    /* console.log(state, event) */
-
+    //reseting collors
     let checkedEl = getChecked(state, '')
-    //console.log(checkedEl)
-    //console.log(state.firstEl, state.secondEl)
+
+    let treeNodes = document.querySelectorAll('.TreeNode')
+
+    if (state.firstEl != undefined) {
+      treeNodes[state.firstEl.el._id].classList.remove('checkbox-color--from');
+    }
+    if (state.secondEl != undefined) {
+      treeNodes[state.secondEl.el._id].classList.remove('checkbox-color--to');
+    }
 
     if (checkedEl.length == 0){
       state.firstEl = undefined
@@ -139,14 +143,13 @@ const BasicTree = (props) => {
       state.secondEl = undefined
     }
 
-    // console.log(state.firstEl, state.secondEl)
-
-    // if (state.firstEl.path == undefined) {
-    //   console.log('select where you are and where you need to go')
-    // } else if (state.firstEl.path == checkedEl[0].path && state.secondEl == undefined) {
-    //   console.log('you are here')
-    //   console.log('now choose where to go')
-    // }
+    //setting colors
+    if (state.firstEl != undefined) {
+      treeNodes[state.firstEl.el._id].classList.add('checkbox-color--from');
+    }
+    if (state.secondEl != undefined) {
+      treeNodes[state.secondEl.el._id].classList.add('checkbox-color--to');
+    }
 
     let from = state.firstEl
     if (from == null) {
@@ -160,7 +163,7 @@ const BasicTree = (props) => {
     } else {
       to = state.secondEl.path
     }
-
+  
     function computePath(from, to) {
 
       let fromParts = from.split('/');
@@ -168,7 +171,6 @@ const BasicTree = (props) => {
 
       let toParts = to.split('/');
       toParts.shift();
-      //console.log(toParts);
 
       let extract = [];
       let remaining = [];

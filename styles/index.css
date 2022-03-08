@@ -35,7 +35,7 @@
 :root {
   --dark: #181818;
   --light: #fff;
-  --color-from: #dae4ff;
+  --color-from:#dae4ff;
   --color-to: #faebd7;
 }
 
@@ -115,6 +115,7 @@
 input[type=checkbox]:checked + .checkbox-span:after {
   background-color: var(--dark);
 }
+
 input[hidden] + .checkbox-span {
   display: none;
 }
@@ -123,7 +124,7 @@ input[hidden] + .checkbox-span {
   box-shadow: 2px 2px var(--color-from);
 }
 .checkbox-color--from + .checkbox-span::before { 
-  border: 9px solid var(--color-from);
+  border: px solid var(--color-from);
 }
  input[type=checkbox]:checked.checkbox-color--from + .checkbox-span:after {
   background-color: var(--color-from);
@@ -146,9 +147,10 @@ input[type=checkbox]:checked.checkbox-color--to + .checkbox-span:after {
   border: 9px solid var(--color-to);
 }
 
-.fileNameCheckedFrom {
+.checkbox-color--from {
   background-color: var(--color-from);
 }
-.fileNameCheckedTo {
+.checkbox-color--to {
   background-color: var(--color-to);
 }
+
