@@ -52,11 +52,11 @@ const BasicTree = (props) => {
     treeNodes.forEach(item => {
       const checkbox = item.querySelector('.checkboxDOM')
       
-      if (isChecked) {
-        checkbox.classList.add('checkbox-color--from');
-      } else {
-        checkbox.classList.remove('checkbox-color--from');
-      }
+      // if (isChecked) {
+      //   checkbox.classList.add('checkbox-color--from');
+      // } else {
+      //   checkbox.classList.remove('checkbox-color--from');
+      // }
     })
 
     localStorage.setItem('relative-path-checkbox-color', isChecked);

@@ -48,7 +48,7 @@ export default function About() {
             <span>click the box</span>
 
             <div className="CheckBox ml-2 mr-2 inline">
-              <input className="checkboxDOM checkbox-color--from" type="checkbox"></input>
+              <input className="checkboxDOM" type="checkbox"></input>
               <span className="checkbox-span"></span>
             </div>
             
